@@ -431,11 +431,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefabs:
-  - {fileID: 6987574875625984258, guid: 7926fffb3129310488088e253697e5b7, type: 3}
-  tileLength: 200
-  numberOfTiles: 1
-  totalNumOfTiles: 2
+  - {fileID: 4878057808675253586, guid: 766b934dcafe326429791470ee551bf0, type: 3}
+  - {fileID: 2480751104178818840, guid: d1b06aa70179dfa4c963d8fb4001adc7, type: 3}
+  - {fileID: 1909687916249438628, guid: 800dddc45ee55b748b679e5735443e33, type: 3}
+  - {fileID: 654244599803419565, guid: 23555d6b3b59ae24a81a6f6ec456597a, type: 3}
+  - {fileID: 3575642441535814677, guid: bc29ab16e8103c3449762954e4b8ebfc, type: 3}
+  - {fileID: 2461000403837986914, guid: 36f412037a5c8614cbf99efef64fd7f8, type: 3}
+  - {fileID: 2461000403837986914, guid: 36f412037a5c8614cbf99efef64fd7f8, type: 3}
+  - {fileID: 4989950273202292921, guid: 53d97edb6d32030459718bf1b7d4dd7e, type: 3}
+  - {fileID: 4989625733647575240, guid: 5d6405e26b379354aa52f40b535a69d6, type: 3}
+  - {fileID: 5309301904024892644, guid: 7a55c22a67cf796408a43ff16c21ce6b, type: 3}
+  - {fileID: 5728209344391268023, guid: 85c8ba582c7387c499bc650a7e8d2bb7, type: 3}
   zSpawn: 0
+  tileLength: 10
+  numberOfTiles: 10
+  playerTransform: {fileID: 2026839112}
 --- !u!4 &1762364858
 Transform:
   m_ObjectHideFlags: 0
@@ -445,7 +455,7 @@ Transform:
   m_GameObject: {fileID: 1762364856}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5909459, y: 11.684863, z: -4.3446593}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
