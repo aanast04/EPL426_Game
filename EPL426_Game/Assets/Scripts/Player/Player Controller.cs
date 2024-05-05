@@ -4,85 +4,44 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float forwardSpeed = 5f;
+    public float sideSpeed = 5f;
+    public float jumpForce = 10f;
 
     private CharacterController controller;
-    private Vector3 direction;
-    public float forwardSpeed;
+    private Vector3 moveDirection;
+    private bool isGrounded;
 
-    private int desiredLane = 1; // Player by default lands on lane 1 (0:left, 2:right)
-    public float laneDistance = 4; //distance between lanes
-
-    public float jumpForce;
-    public float Gravity = -20;
-
-    // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
-
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // Move forward constantly
+        moveDirection.z = forwardSpeed;
 
-        direction.z = forwardSpeed;
+        // Check if the player is grounded
+        isGrounded = controller.isGrounded;
 
-        
-        if (controller.isGrounded)
+        // Move sideways
+        float horizontalInput = Input.GetAxis("Horizontal");
+        moveDirection.x = horizontalInput * sideSpeed;
+
+        // Jump
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            direction.y = -1;
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                Jump();
-            }
-        }
-        else
-        {
-            direction.y += Gravity * Time.fixedDeltaTime;
-        }
-        
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            desiredLane++;
-            if (desiredLane== 3)
-            {
-                desiredLane = 2;
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            desiredLane--;
-            if (desiredLane == -1)
-            {
-                desiredLane = 0;
-            }
+            moveDirection.y = jumpForce;
         }
 
-        Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
-
-        if (desiredLane == 0)
+        // Apply gravity
+        if (!isGrounded)
         {
-            targetPosition += Vector3.left * laneDistance;
-        }else if(desiredLane == 2)
-        {
-            targetPosition += Vector3.right * laneDistance;
+            moveDirection.y += Physics.gravity.y * Time.deltaTime;
         }
 
-        transform.position = Vector3.Lerp(transform.position, targetPosition, 80 * Time.fixedDeltaTime);
-        
-
+        // Move the player
+        controller.Move(moveDirection * Time.deltaTime);
     }
-
-    private void FixedUpdate()
-    {
-        controller.Move(direction * Time.fixedDeltaTime);
-    }
-
-    private void Jump()
-    {
-        direction.y = jumpForce;
-
-    }
-
 }
