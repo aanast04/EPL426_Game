@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7397137975640516149}
   m_Layer: 0
   m_Name: MovableWall
-  m_TagString: Wall
+  m_TagString: Obstales
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -44,4 +44,14 @@ public class PlayerController : MonoBehaviour
         // Move the player
         controller.Move(moveDirection * Time.deltaTime);
     }
+
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+         if(hit.transform.tag == "Obstales")
+        {
+            PlayerManager.gameOver = true;
+        }
+    }
+
 }
