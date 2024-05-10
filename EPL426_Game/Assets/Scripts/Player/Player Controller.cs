@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
     public float forwardSpeed = 5f;
@@ -25,12 +26,24 @@ public class PlayerController : MonoBehaviour
         // Check if the player is grounded
         isGrounded = controller.isGrounded;
 
-        // Move sideways
+        // Move sideways based on touch input
         float horizontalInput = Input.GetAxis("Horizontal");
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.position.x < Screen.width / 2)
+            {
+                horizontalInput = -1f; // Move left
+            }
+            else
+            {
+                horizontalInput = 1f; // Move right
+            }
+        }
         moveDirection.x = horizontalInput * sideSpeed;
 
         // Jump
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded && (Input.GetKeyDown(KeyCode.Space) || TouchJump()))
         {
             moveDirection.y = jumpForce;
         }
@@ -45,10 +58,25 @@ public class PlayerController : MonoBehaviour
         controller.Move(moveDirection * Time.deltaTime);
     }
 
+    // Check for touch-based jump
+    bool TouchJump()
+    {
+        if (Input.touchCount > 0)
+        {
+            foreach (Touch touch in Input.touches)
+            {
+                if (touch.phase == TouchPhase.Began && touch.position.x > Screen.width / 2)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-         if(hit.transform.tag == "Obstales")
+        if (hit.transform.tag == "Obstales")
         {
             PlayerManager.gameOver = true;
         }
