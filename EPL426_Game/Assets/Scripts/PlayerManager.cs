@@ -6,6 +6,12 @@ public class PlayerManager : MonoBehaviour
 {
     public static bool gameOver;
     public GameObject gameOverPanel;
+    //AudioManager audioManager;
+
+    //private void Awake()
+    //{
+    //    audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    //}
 
     void Start()
     {
@@ -20,8 +26,11 @@ public class PlayerManager : MonoBehaviour
 
         if(gameOver)
         {
+            
             Time.timeScale = 0;
             gameOverPanel.SetActive(true);
+
+            //audioManager.PlaySFX(audioManager.lose);
         }
 
 

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Obstales
+  - Audio
   layers:
   - Default
   - TransparentFX
