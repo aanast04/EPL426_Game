@@ -1973,7 +1973,6 @@ MonoBehaviour:
   - {fileID: 4989950273202292921, guid: 53d97edb6d32030459718bf1b7d4dd7e, type: 3}
   - {fileID: 4989625733647575240, guid: 5d6405e26b379354aa52f40b535a69d6, type: 3}
   - {fileID: 5309301904024892644, guid: 7a55c22a67cf796408a43ff16c21ce6b, type: 3}
-  - {fileID: 5728209344391268023, guid: 85c8ba582c7387c499bc650a7e8d2bb7, type: 3}
   zSpawn: 0
   tileLength: 10
   numberOfTiles: 10
