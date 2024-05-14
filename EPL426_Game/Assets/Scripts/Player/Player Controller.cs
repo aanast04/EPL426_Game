@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float forwardSpeed = 5f;
     public float sideSpeed = 5f;
     public float jumpForce = 10f;
+    public float maxSpeed;
 
     private CharacterController controller;
     private Vector3 moveDirection;
@@ -56,6 +57,13 @@ public class PlayerController : MonoBehaviour
 
         // Move the player
         controller.Move(moveDirection * Time.deltaTime);
+
+        //Increase Speed
+        if(forwardSpeed < maxSpeed)
+        {
+            forwardSpeed += 0.1f * Time.deltaTime;
+        }
+        
     }
 
     // Check for touch-based jump
