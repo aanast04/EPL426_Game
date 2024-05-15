@@ -4,26 +4,27 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    //[Header("------- Audio Source --------")]
-    [SerializeField] public AudioSource musicSource;
-    [SerializeField] public AudioSource SFXSource;
 
-    //[Header("------- Audio Clip --------")]
-    public AudioClip MainMenu;
-    public AudioClip Gameplay;
-    public AudioClip jump;
-    public AudioClip lose;
-    public AudioClip buttons;
-
-    private void Start()
+    public Sound[] sounds;
+    // Start is called before the first frame update
+    void Start()
     {
-        musicSource.clip = MainMenu;
-        musicSource.Play();
+        foreach(Sound s in sounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+            s.source.loop = s.loop;
+        }
+
+        PlaySound("MainTheme");
     }
 
-    public void PlaySFX(AudioClip clip)
+    public void PlaySound(string name)
     {
-        SFXSource.PlayOneShot(clip);
+        foreach (Sound s in sounds)
+        {
+            if (s.name == name)
+                s.source.Play();
+        }
     }
-
 }
