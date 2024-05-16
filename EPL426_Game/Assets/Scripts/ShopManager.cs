@@ -27,8 +27,22 @@ public class ShopManager : MonoBehaviour
         characters[currentCharacterIndex].SetActive(false);
 
         currentCharacterIndex++;
-        if (currentCharacterIndex == characters.length)
+        if (currentCharacterIndex == characters.Length)
             currentCharacterIndex = 0;
+
+
+        characters[currentCharacterIndex].SetActive(true);
+        PlayerPrefs.SetInt("SelectedChar", currentCharacterIndex);
+
+    }
+
+    public void ChangePrevious()
+    {
+        characters[currentCharacterIndex].SetActive(false);
+
+        currentCharacterIndex--;
+        if (currentCharacterIndex == -1)
+            currentCharacterIndex = characters.Length -1;
 
 
         characters[currentCharacterIndex].SetActive(true);
