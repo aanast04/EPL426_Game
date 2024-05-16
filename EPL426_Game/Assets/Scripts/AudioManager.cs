@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -16,7 +17,19 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
         }
 
-        PlaySound("MainTheme");
+        // Get the current active scene
+        Scene currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+
+        // Check if it's the Scene1
+        if (currentScene.name == "Scene1")
+        {
+            PlaySound("MainTheme");
+        }
+        // Check if it's the Menu scene
+        else if (currentScene.name == "Menu")
+        {
+            PlaySound("MainMenu");
+        }
     }
 
     public void PlaySound(string name)
