@@ -81,7 +81,7 @@ public class ShopManager : MonoBehaviour
         {
             buyButton.gameObject.SetActive(true);
             buyButton.GetComponentInChildren<TextMeshProUGUI>().text = "Buy-" + c.price;
-            if(c.price <= PlayerPrefs.GetInt("NumberOfCoins", 0))
+            if(c.price <= PlayerPrefs.GetInt("TotalCoins", 0))
             {
                 buyButton.interactable = true;
             }
@@ -99,6 +99,6 @@ public class ShopManager : MonoBehaviour
         PlayerPrefs.SetInt(c.name, 0);
         PlayerPrefs.SetInt("SelectedChar", currentCharacterIndex);
         c.isUnlocked = true;
-        PlayerPrefs.SetInt("NumberOfCoins", PlayerPrefs.GetInt("NumberOfCoins", 0) - c.price);
+        PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins", 0) - c.price);
     }
 }
