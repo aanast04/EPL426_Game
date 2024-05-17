@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7174246026199188044}
   m_Layer: 0
   m_Name: RBCube (1)
-  m_TagString: Untagged
+  m_TagString: Obstales
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 7174246026724477136}
   m_Layer: 0
   m_Name: RBCube (2)
-  m_TagString: Untagged
+  m_TagString: Obstales
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 7174246027539500280}
   m_Layer: 0
   m_Name: RBCube
-  m_TagString: Untagged
+  m_TagString: Obstales
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

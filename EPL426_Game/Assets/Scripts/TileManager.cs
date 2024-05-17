@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class TileManager : MonoBehaviour
 {
@@ -10,10 +11,11 @@ public class TileManager : MonoBehaviour
     public int numberOfTiles = 8;
     private List<GameObject> activeTiles = new List<GameObject>();
 
-    public Transform playerTransform;
+    private Transform playerTransform;
     void Start()
     {
-        for(int i = 0; i < numberOfTiles; i++)
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        for (int i = 0; i < numberOfTiles; i++)
         {   
             if(i==0)
                 SpawnTile(0);
