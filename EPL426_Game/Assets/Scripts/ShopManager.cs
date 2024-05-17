@@ -96,7 +96,7 @@ public class ShopManager : MonoBehaviour
     {
         CharactersBluePrint c = characts[currentCharacterIndex];
 
-        PlayerPrefs.SetInt(c.name, 0);
+        PlayerPrefs.SetInt(c.name, 1);
         PlayerPrefs.SetInt("SelectedChar", currentCharacterIndex);
         c.isUnlocked = true;
         PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins", 0) - c.price);

@@ -71,10 +71,10 @@ MonoBehaviour:
     m_Value: 0.414
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.133
+    m_Value: 0.19
   rounded:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
     m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 9
   colorFilter:
     m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
