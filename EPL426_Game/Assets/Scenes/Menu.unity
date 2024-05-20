@@ -505,7 +505,7 @@ MonoBehaviour:
     index: 2
     price: 20
     isUnlocked: 0
-  - name: 'Tuxzilla '
+  - name: Tuxzilla BOSS
     index: 3
     price: 30
     isUnlocked: 0
