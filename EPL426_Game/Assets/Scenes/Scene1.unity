@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 1c9e45b13d2e1e54792d5bec46c65c44, type: 2}
   m_LightingSettings: {fileID: 2069722254}
 --- !u!196 &4
 NavMeshSettings:
@@ -2347,7 +2347,6 @@ GameObject:
   - component: {fileID: 1600475163}
   - component: {fileID: 1600475162}
   - component: {fileID: 1600475166}
-  - component: {fileID: 1600475167}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -2485,18 +2484,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!114 &1600475167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600475161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e2566fc3a1a7cc4393f53029f888ea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1749508775
 GameObject:
   m_ObjectHideFlags: 0
@@ -3106,9 +3093,9 @@ LightingSettings:
   m_PrefabAsset: {fileID: 0}
   m_Name: Settings.lighting
   serializedVersion: 6
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_EnableBakedLightmaps: 1
-  m_EnableRealtimeLightmaps: 0
+  m_EnableRealtimeLightmaps: 1
   m_RealtimeEnvironmentLighting: 1
   m_BounceScale: 1
   m_AlbedoBoost: 1
